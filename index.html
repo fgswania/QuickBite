@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>QuickBite Kitchen - Food Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                QuickBite Kitchen
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search our menu...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="nav-icons">
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <div class="user-dropdown" id="user-dropdown">
+                    <button id="user-icon"><i class="fas fa-user"></i></button>
+                    <div class="user-dropdown-content">
+                        <a href="#" id="login-btn">Sign In</a>
+                        <a href="#" id="register-btn">Register</a>
+                    </div>
+                </div>
+                <a href="#" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="menu">Menu</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page-section active">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Delicious Food Delivered To Your Door</h1>
+                <p>Freshly prepared meals made with quality ingredients</p>
+                <a href="#" class="btn">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Food Categories</h2>
+                    <p>Explore our wide variety of food categories</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="category-card active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        <h3>All</h3>
+                        <p>View all items</p>
+                    </div>
+                    
+                    <div class="category-card" data-category="pizza">
+                        <i class="fas fa-pizza-slice"></i>
+                        <h3>Pizza</h3>
+                        <p>12+ options</p>
+                    </div>
+                    
+                    <div class="category-card" data-category="burger">
+                        <i class="fas fa-hamburger"></i>
+                        <h3>Burgers</h3>
+                        <p>8+ options</p>
+                    </div>
+                    
+                    <div class="category-card" data-category="pasta">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Pasta</h3>
+                        <p>6+ options</p>
+                    </div>
+                    
+                    <div class="category-card" data-category="salad">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Salads</h3>
+                        <p>7+ options</p>
+                    </div>
+                    
+                    <div class="category-card" data-category="dessert">
+                        <i class="fas fa-ice-cream"></i>
+                        <h3>Desserts</h3>
+                        <p>8+ options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Menu Items -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Menu Items</h2>
+                    <p>Our most popular dishes</p>
+                </div>
+                
+                <div class="menu-items" id="featured-menu">
+                    <!-- Featured menu items will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Page -->
+    <section id="menu" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Browse our complete menu</p>
+            </div>
+            
+            <div class="menu-items" id="menu-items">
+                <!-- All menu items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About QuickBite Kitchen</h2>
+                <p>Learn more about our restaurant</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant">
+                </div>
+                
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2010, QuickBite Kitchen has been serving delicious, high-quality food to our community for over a decade. We believe in using fresh, locally-sourced ingredients to create meals that are both nutritious and delicious.</p>
+                    <p>Our team of experienced chefs are passionate about food and dedicated to providing you with an exceptional dining experience, whether you're dining in or ordering for delivery.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <div class="feature-content">
+                                <h4>Fresh Ingredients</h4>
+                                <p>We source the freshest ingredients daily</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <div class="feature-content">
+                                <h4>Award Winning</h4>
+                                <p>Recognized for culinary excellence</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <div class="feature-content">
+                                <h4>Fast Delivery</h4>
+                                <p>Hot food delivered to your door</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <div class="feature-content">
+                                <h4>Made with Love</h4>
+                                <p>Passion in every dish we create</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Restaurant Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Food Street</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+92 000 0000000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@quickbitekitchen.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 11am - 10pm</p>
+                            <p>Saturday - Sunday: 10am - 11pm</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Your Email</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Page -->
+    <section id="checkout" class="page-section">
+        <div class="container">
+            <div class="menu-header">
+                <button class="back-btn" onclick="showPage('home')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2>Checkout</h2>
+            </div>
+            
+            <div class="checkout-container">
+                <div class="checkout-section">
+                    <h3>Delivery Information</h3>
+                    <form id="checkout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Delivery Notes (Optional)</label>
+                            <textarea id="notes"></textarea>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-payment="card">
+                            <i class="fas fa-credit-card"></i>
+                            <p>Credit Card</p>
+                        </div>
+                        <div class="payment-method" data-payment="paypal">
+                            <i class="fab fa-paypal"></i>
+                            <p>PayPal</p>
+                        </div>
+                        <div class="payment-method" data-payment="cash">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <p>Cash</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Order Summary</h3>
+                    <div class="checkout-summary" id="checkout-summary">
+                    </div>
+                    
+                    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Confirmation Page -->
+    <section id="confirmation" class="page-section">
+        <div class="container">
+            <div class="order-confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your order. We've sent a confirmation email with your order details.</p>
+                
+                <div class="order-details" id="order-details">>
+                </div>
+                
+                <a href="#" class="btn" onclick="showPage('home')">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Register -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome to QuickBite Kitchen</h2>
+                <button class="close-modal" id="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="login">Sign In</div>
+                <div class="tab" data-tab="register">Register</div>
+            </div>
+            
+            <div class="tab-content active" id="login-tab">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Sign In</button>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="register-tab">
+                <form id="register-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="register-first-name">First Name</label>
+                            <input type="text" id="register-first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-last-name">Last Name</label>
+                            <input type="text" id="register-last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>QuickBite Kitchen</h3>
+                    <p>Delicious food delivered to your doorstep in minutes. Order from our kitchen now!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="menu">Menu</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" data-category="pizza">Pizza</a></li>
+                        <li><a href="#" data-category="burger">Burgers</a></li>
+                        <li><a href="#" data-category="pasta">Pasta</a></li>
+                        <li><a href="#" data-category="salad">Salads</a></li>
+                        <li><a href="#" data-category="dessert">Desserts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Food Street</li>
+                        <li><i class="fas fa-phone"></i> +92 000 0000000</li>
+                        <li><i class="fas fa-envelope"></i> info@quickbitekitchen.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 QuickBite Kitchen. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <p style="text-align: center; color: #777; margin-top: 50px;">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="showPage('checkout')">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notification-text">Item added to cart!</span>
+    </div>
+
+    <!-- Email Modal -->
+    <div class="email-modal" id="email-modal">
+        <div class="email-modal-content">
+            <h3>Enter Your Email</h3>
+            <p>We'll send your order confirmation to this email address</p>
+            <input type="email" id="order-email" placeholder="your@email.com" required>
+            <div class="email-modal-buttons">
+                <button class="btn-cancel" onclick="closeEmailModal()">Cancel</button>
+                <button class="btn-send" onclick="sendOrderConfirmation()">Send Confirmation</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu data
+        const menuItems = [
+            {
+                name: "Margherita Pizza",
+                price: 12.99,
+                category: "pizza",
+                description: "Classic pizza with tomato sauce, mozzarella, and basil",
+                image: "https://media.istockphoto.com/id/1414575281/photo/a-delicious-and-tasty-italian-pizza-margherita-with-tomatoes-and-buffalo-mozzarella.jpg?s=1024x1024&w=is&k=20&c=bwoUzONnFgIK65TQ7uUeSAlM78h-gCmKSR3nnGhb6AI=",
+                rating: 4.8
+            },
+            {
+                name: "Pepperoni Pizza",
+                price: 14.99,
+                category: "pizza",
+                description: "Classic pizza with pepperoni and mozzarella cheese",
+                image: "https://media.istockphoto.com/id/521403691/photo/hot-homemade-pepperoni-pizza.jpg?s=1024x1024&w=is&k=20&c=KnhIQkTXRomTqloOutmCKQO18a8vms_Hn60SqGpOvTY=",
+                rating: 4.7
+            },
+            {
+                name: "BBQ Chicken Pizza",
+                price: 15.99,
+                category: "pizza",
+                description: "Pizza with BBQ sauce, chicken, red onions, and cilantro",
+                image: "https://media.istockphoto.com/id/1447478235/photo/bbq-chicken-pizza-isolated-on-cutting-board-top-view-on-dark-background-italian-fast-food.jpg?s=1024x1024&w=is&k=20&c=BB-HDB7WjeKzCgfsW9QydXJ6jDopwr1Xba1wRiUC_Ls=",
+                rating: 4.6
+            },
+            {
+                name: "Classic Burger",
+                price: 9.99,
+                category: "burger",
+                description: "Beef patty with lettuce, tomato, onion, and special sauce",
+                image: "https://media.istockphoto.com/id/610747100/photo/tasty-grilled-burger-with-lettuce-and-mayonnaise-rustic-wooden-table.jpg?s=1024x1024&w=is&k=20&c=rGNr3Qz90Evu42iWNUqOBbp5mtKxsg-X-Ge3yNRqaMo=",
+                rating: 4.5
+            },
+            {
+                name: "Cheeseburger",
+                price: 10.99,
+                category: "burger",
+                description: "Beef patty with cheddar cheese, lettuce, and tomato",
+                image: "https://media.istockphoto.com/id/2166728719/photo/delicious-cheeseburger-with-fresh-ingredients.jpg?s=1024x1024&w=is&k=20&c=Pn14Mm32Q1DXg3Rk_XIvUVJoF7dMOu0jm9uxywmYxuY=",
+                rating: 4.4
+            },
+            {
+                name: "Bacon Burger",
+                price: 11.99,
+                category: "burger",
+                description: "Beef patty with bacon, cheese, and BBQ sauce",
+                image: "https://media.istockphoto.com/id/1398630614/photo/bacon-cheeseburger-on-a-toasted-bun.jpg?s=1024x1024&w=is&k=20&c=rXM2ry9bme764bKBGagwq4jYdjr7q98UiJLyHrl6BUU=",
+                rating: 4.7
+            },
+            {
+                name: "Spaghetti Carbonara",
+                price: 13.99,
+                category: "pasta",
+                description: "Classic Italian pasta with eggs, cheese, and pancetta",
+                image: "https://media.istockphoto.com/id/1065506718/photo/carbonara-pasta-spaghetti-with-pancetta-egg-parmesan-cheese-and-cream-sauce-traditional.jpg?s=1024x1024&w=is&k=20&c=xF4XbziNHhYL-WyNJAnEXERXhj1fgbbFEqS0cFevTjQ=",
+                rating: 4.8
+            },
+            {
+                name: "Fettuccine Alfredo",
+                price: 12.99,
+                category: "pasta",
+                description: "Creamy pasta with parmesan cheese and butter",
+                image: "https://media.istockphoto.com/id/1451111530/photo/creamy-alfredo-pasta-with-chicken-mushrooms-and-parmesan-cheese-healthy-italian-food.jpg?s=1024x1024&w=is&k=20&c=JR6BU0rpw_Aw4hWjPYz9PskImOzMhxbBkBYd6xqYQ-M=",
+                rating: 4.6
+            },
+            {
+                name: "Penne Arrabbiata",
+                price: 11.99,
+                category: "pasta",
+                description: "Spicy tomato sauce with garlic and chili",
+                image: "https://media.istockphoto.com/id/2168058934/photo/classic-italian-pasta-penne-alla-arrabiata-with-basil-and-freshly-grated-parmesan-cheese-on.jpg?s=1024x1024&w=is&k=20&c=KcGafy4i-0qGWEtVycmSJUgT_IZHbEoLB7wBeCe-tok=",
+                rating: 4.5
+            },
+            {
+                name: "Caesar Salad",
+                price: 8.99,
+                category: "salad",
+                description: "Romaine lettuce with Caesar dressing, croutons, and parmesan",
+                image: "https://media.istockphoto.com/id/1308224765/photo/caesar-salad-with-parmesan-cheese-grilled-chicken-meat-and-croutons.jpg?s=1024x1024&w=is&k=20&c=CuGkjjEeqbLCyxmsl_Ov4ZVAln0mfRJ1dG1WO502MoY=",
+                rating: 4.4
+            },
+            {
+                name: "Greek Salad",
+                price: 9.99,
+                category: "salad",
+                description: "Fresh vegetables with feta cheese and olives",
+                image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                rating: 4.3
+            },
+            {
+                name: "Quinoa Salad",
+                price: 10.99,
+                category: "salad",
+                description: "Quinoa with roasted vegetables and lemon dressing",
+                image: "https://media.istockphoto.com/id/1316824320/photo/healthy-quinoa-black-bean-salad-with-mango-and-avocado.jpg?s=1024x1024&w=is&k=20&c=flJXzcl06waiNtIUszS86VQk5JfBuPw2g5prYnCzd90=",
+                rating: 4.5
+            },
+            {
+                name: "Chocolate Cake",
+                price: 6.99,
+                category: "dessert",
+                description: "Rich chocolate cake with chocolate ganache",
+                image: "https://media.istockphoto.com/id/2165404401/photo/chocolate-cake-with-chocolate-icing-on-a-black-plate-next-to-a-fork.jpg?s=1024x1024&w=is&k=20&c=Fvnhx096nFcZOK1BR3WZ8N15JjOLSA057lHY7q_IxA4=",
+                rating: 4.9
+            },
+            {
+                name: "Tiramisu",
+                price: 6.99,
+                category: "dessert",
+                description: "Classic Italian dessert with coffee and mascarpone",
+                image: "https://media.istockphoto.com/id/1422163265/photo/tiramisu.jpg?s=1024x1024&w=is&k=20&c=bjJiDvFKaWReZAslcAifxdUshSNimJ4t7s3eDyZkonA=",
+                rating: 4.8
+            },
+            {
+                name: "Cheesecake",
+                price: 5.99,
+                category: "dessert",
+                description: "Creamy cheesecake with berry compote",
+                image: "https://media.istockphoto.com/id/1167344045/photo/cheesecake-slice-new-york-style-classical-cheese-cake.jpg?s=1024x1024&w=is&k=20&c=ii_k4Dd3oAwOeFptRBtZ9QTT1yve8NMUKDD37XZ9dg0=",
+                rating: 4.7
+            }
+        ];
+
+        // Cart functionality
+        let cart = [];
+        let cartCount = 0;
+        let cartTotal = 0;
+        let selectedPaymentMethod = 'card';
+        let orderNumber = '';
+        let currentUser = null;
+        let activeCategory = 'all';
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.setAttribute('data-theme', body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+            themeToggle.innerHTML = body.getAttribute('data-theme') === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', body.getAttribute('data-theme'));
+        });
+        
+        // Load saved theme
+        if (localStorage.getItem('theme')) {
+            body.setAttribute('data-theme', localStorage.getItem('theme'));
+            themeToggle.innerHTML = localStorage.getItem('theme') === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+        
+        // Page navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageSections = document.querySelectorAll('.page-section');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                showPage(page);
+            });
+        });
+        
+        function showPage(pageId) {
+            pageSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            document.getElementById(pageId).classList.add('active');
+            
+            // Load menu items if on menu page
+            if (pageId === 'menu') {
+                loadMenuItems('all');
+            }
+            
+            // Load featured items if on home page
+            if (pageId === 'home') {
+                loadFeaturedItems();
+            }
+            
+            // Close cart sidebar
+            cartSidebar.classList.remove('active');
+        }
+        
+        // Load featured menu items
+        function loadFeaturedItems() {
+            const featuredMenu = document.getElementById('featured-menu');
+            featuredMenu.innerHTML = '';
+            
+            // Show first 6 items as featured
+            const featuredItems = menuItems.slice(0, 6);
+            
+            featuredItems.forEach(item => {
+                const menuItem = createMenuItemElement(item);
+                featuredMenu.appendChild(menuItem);
+            });
+        }
+        
+        // Create menu item element
+        function createMenuItemElement(item) {
+            const menuItem = document.createElement('div');
+            menuItem.className = 'menu-item';
+            menuItem.setAttribute('data-category', item.category);
+            
+            menuItem.innerHTML = `
+                <div class="menu-item-img">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="menu-item-info">
+                    <div class="menu-item-header">
+                        <h3>${item.name}</h3>
+                        <span class="menu-item-price">$${item.price.toFixed(2)}</span>
+                    </div>
+                    <p class="menu-item-description">${item.description}</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-rating">
+                            <i class="fas fa-star"></i>
+                            <span>${item.rating}</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('${item.name}', ${item.price})">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return menuItem;
+        }
+        
+        // Load menu items
+        function loadMenuItems(category) {
+            const menuItemsContainer = document.getElementById('menu-items');
+            menuItemsContainer.innerHTML = '';
+            
+            let filteredItems = menuItems;
+            
+            if (category !== 'all') {
+                filteredItems = menuItems.filter(item => item.category === category);
+            }
+            
+            filteredItems.forEach(item => {
+                const menuItem = createMenuItemElement(item);
+                menuItemsContainer.appendChild(menuItem);
+            });
+        }
+        
+        // Category filter
+        const categoryCards = document.querySelectorAll('.category-card');
+        
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                categoryCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const category = card.getAttribute('data-category');
+                activeCategory = category;
+                
+                // If on menu page, filter items
+                if (document.getElementById('menu').classList.contains('active')) {
+                    loadMenuItems(category);
+                }
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            } else {
+                // Real-time search as user types
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                // If search is empty, show items based on active category
+                if (document.getElementById('menu').classList.contains('active')) {
+                    loadMenuItems(activeCategory);
+                } else {
+                    loadFeaturedItems();
+                }
+                return;
+            }
+            
+            // Switch to menu page if not already there
+            if (!document.getElementById('menu').classList.contains('active')) {
+                showPage('menu');
+            }
+            
+            // Filter menu items by search term
+            const menuItemsContainer = document.getElementById('menu-items');
+            menuItemsContainer.innerHTML = '';
+            
+            const filteredItems = menuItems.filter(item => 
+                item.name.toLowerCase().includes(searchTerm) || 
+                item.description.toLowerCase().includes(searchTerm) ||
+                item.category.toLowerCase().includes(searchTerm)
+            );
+            
+            if (filteredItems.length === 0) {
+                menuItemsContainer.innerHTML = '<p style="text-align: center; color: #777; margin-top: 50px;">No items found matching your search</p>';
+            } else {
+                filteredItems.forEach(item => {
+                    const menuItem = createMenuItemElement(item);
+                    menuItemsContainer.appendChild(menuItem);
+                });
+            }
+        }
+        
+        // User dropdown
+        const userDropdown = document.getElementById('user-dropdown');
+        const userIcon = document.getElementById('user-icon');
+        
+        userIcon.addEventListener('click', () => {
+            userDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!userDropdown.contains(e.target)) {
+                userDropdown.classList.remove('active');
+            }
+        });
+        
+        // Login/Register modal
+        const authModal = document.getElementById('auth-modal');
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+        const closeModal = document.getElementById('close-modal');
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        loginBtn.addEventListener('click', () => {
+            authModal.classList.add('active');
+            showTab('login');
+        });
+        
+        registerBtn.addEventListener('click', () => {
+            authModal.classList.add('active');
+            showTab('register');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            authModal.classList.remove('active');
+        });
+        
+        // Tab switching
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                showTab(tabId);
+            });
+        });
+        
+        function showTab(tabId) {
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('data-tab') === tabId) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `${tabId}-tab`) {
+                    content.classList.add('active');
+                }
+            });
+        }
+        
+        // Login form submission
+        const loginForm = document.getElementById('login-form');
+        
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Simulate login
+            setTimeout(() => {
+                currentUser = { email };
+                authModal.classList.remove('active');
+                updateUserUI();
+                showNotification('Login successful!');
+                loginForm.reset();
+            }, 1000);
+        });
+        
+        // Register form submission
+        const registerForm = document.getElementById('register-form');
+        
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('register-first-name').value;
+            const lastName = document.getElementById('register-last-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match!');
+                return;
+            }
+            
+            // Simulate registration
+            setTimeout(() => {
+                currentUser = { email, firstName, lastName };
+                authModal.classList.remove('active');
+                updateUserUI();
+                showNotification('Registration successful!');
+                registerForm.reset();
+            }, 1000);
+        });
+        
+        // Update user UI
+        function updateUserUI() {
+            const userDropdownContent = document.querySelector('.user-dropdown-content');
+            
+            if (currentUser) {
+                userDropdownContent.innerHTML = `
+                    <a href="#">Welcome, ${currentUser.firstName || currentUser.email}</a>
+                    <a href="#" id="logout-btn">Logout</a>
+                `;
+                
+                // Add logout functionality
+                document.getElementById('logout-btn').addEventListener('click', () => {
+                    currentUser = null;
+                    updateUserUI();
+                    showNotification('You have been logged out');
+                });
+            } else {
+                userDropdownContent.innerHTML = `
+                    <a href="#" id="login-btn">Sign In</a>
+                    <a href="#" id="register-btn">Register</a>
+                `;
+                
+                // Re-add login/register functionality
+                document.getElementById('login-btn').addEventListener('click', () => {
+                    authModal.classList.add('active');
+                    showTab('login');
+                });
+                
+                document.getElementById('register-btn').addEventListener('click', () => {
+                    authModal.classList.add('active');
+                    showTab('register');
+                });
+            }
+        }
+        
+        // Cart sidebar
+        const cartIcon = document.getElementById('cart-icon');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCart = document.getElementById('close-cart');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        const cartCountElement = document.querySelector('.cart-count');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notification-text');
+        
+        // Open cart
+        cartIcon.addEventListener('click', () => {
+            cartSidebar.classList.add('active');
+        });
+        
+        // Close cart
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+        });
+        
+        // Add to cart function
+        function addToCart(itemName, price) {
+            const existingItem = cart.find(cartItem => cartItem.item === itemName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    item: itemName,
+                    price,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showNotification(`${itemName} added to cart!`);
+        }
+        
+        // Update cart display
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            cartCount = 0;
+            cartTotal = 0;
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: #777; margin-top: 50px;">Your cart is empty</p>';
+            } else {
+                cart.forEach((cartItem, index) => {
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.className = 'cart-item';
+                    cartItemElement.innerHTML = `
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="${cartItem.item}">
+                        <div class="cart-item-info">
+                            <h4>${cartItem.item}</h4>
+                            <p>QuickBite Kitchen</p>
+                            <div class="cart-item-price">$${cartItem.price.toFixed(2)}</div>
+                            <div class="cart-item-quantity">
+                                <button onclick="decreaseQuantity(${index})">-</button>
+                                <span>${cartItem.quantity}</span>
+                                <button onclick="increaseQuantity(${index})">+</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItemElement);
+                    
+                    cartCount += cartItem.quantity;
+                    cartTotal += cartItem.price * cartItem.quantity;
+                });
+            }
+            
+            cartCountElement.textContent = cartCount;
+            cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`;
+            
+            // Update checkout summary if on checkout page
+            if (document.getElementById('checkout').classList.contains('active')) {
+                updateCheckoutSummary();
+            }
+        }
+        
+        // Increase quantity
+        function increaseQuantity(index) {
+            cart[index].quantity += 1;
+            updateCart();
+        }
+        
+        // Decrease quantity
+        function decreaseQuantity(index) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            updateCart();
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Payment method selection
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', () => {
+                paymentMethods.forEach(m => m.classList.remove('active'));
+                method.classList.add('active');
+                selectedPaymentMethod = method.getAttribute('data-payment');
+            });
+        });
+        
+        // Update checkout summary
+        function updateCheckoutSummary() {
+            const checkoutSummary = document.getElementById('checkout-summary');
+            checkoutSummary.innerHTML = '';
+            
+            cart.forEach(item => {
+                const summaryItem = document.createElement('div');
+                summaryItem.className = 'checkout-summary-item';
+                summaryItem.innerHTML = `
+                    <span>${item.quantity}x ${item.item}</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                checkoutSummary.appendChild(summaryItem);
+            });
+            
+            const subtotal = cartTotal;
+            const deliveryFee = 2.99;
+            const tax = subtotal * 0.08;
+            const total = subtotal + deliveryFee + tax;
+            
+            checkoutSummary.innerHTML += `
+                <div class="checkout-summary-item">
+                    <span>Subtotal</span>
+                    <span>$${subtotal.toFixed(2)}</span>
+                </div>
+                <div class="checkout-summary-item">
+                    <span>Delivery Fee</span>
+                    <span>$${deliveryFee.toFixed(2)}</span>
+                </div>
+                <div class="checkout-summary-item">
+                    <span>Tax</span>
+                    <span>$${tax.toFixed(2)}</span>
+                </div>
+                <div class="checkout-summary-item">
+                    <span>Total</span>
+                    <span>$${total.toFixed(2)}</span>
+                </div>
+            `;
+        }
+        
+        // Place order
+        function placeOrder() {
+            const form = document.getElementById('checkout-form');
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // Generate order number
+            orderNumber = 'QB' + Math.floor(100000 + Math.random() * 900000);
+            
+            // Show email modal
+            document.getElementById('email-modal').classList.add('active');
+        }
+        
+        // Close email modal
+        function closeEmailModal() {
+            document.getElementById('email-modal').classList.remove('active');
+        }
+        
+        // Send order confirmation
+        function sendOrderConfirmation() {
+            const email = document.getElementById('order-email').value;
+            
+            if (!email) {
+                showNotification('Please enter a valid email address');
+                return;
+            }
+            
+            // Simulate sending email
+            setTimeout(() => {
+                closeEmailModal();
+                showNotification('Order confirmation sent to ' + email);
+                
+                // Update order confirmation page
+                updateOrderConfirmation();
+                
+                // Show confirmation page
+                showPage('confirmation');
+                
+                // Clear cart
+                cart = [];
+                updateCart();
+            }, 1500);
+        }
+        
+        // Update order confirmation
+        function updateOrderConfirmation() {
+            const orderDetails = document.getElementById('order-details');
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const zip = document.getElementById('zip').value;
+            
+            const subtotal = cartTotal;
+            const deliveryFee = 2.99;
+            const tax = subtotal * 0.08;
+            const total = subtotal + deliveryFee + tax;
+            
+            orderDetails.innerHTML = `
+                <h3>Order Details</h3>
+                <div class="order-details-item">
+                    <span>Order Number</span>
+                    <span>${orderNumber}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Date</span>
+                    <span>${new Date().toLocaleDateString()}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Customer</span>
+                    <span>${firstName} ${lastName}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Email</span>
+                    <span>${email}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Delivery Address</span>
+                    <span>${address}, ${city} ${zip}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Payment Method</span>
+                    <span>${selectedPaymentMethod.charAt(0).toUpperCase() + selectedPaymentMethod.slice(1)}</span>
+                </div>
+            `;
+            
+            // Add order items
+            cart.forEach(item => {
+                const orderItem = document.createElement('div');
+                orderItem.className = 'order-details-item';
+                orderItem.innerHTML = `
+                    <span>${item.quantity}x ${item.item}</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                orderDetails.appendChild(orderItem);
+            });
+            
+            // Add totals
+            orderDetails.innerHTML += `
+                <div class="order-details-item">
+                    <span>Subtotal</span>
+                    <span>$${subtotal.toFixed(2)}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Delivery Fee</span>
+                    <span>$${deliveryFee.toFixed(2)}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Tax</span>
+                    <span>$${tax.toFixed(2)}</span>
+                </div>
+                <div class="order-details-item">
+                    <span>Total</span>
+                    <span>$${total.toFixed(2)}</span>
+                </div>
+            `;
+        }
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                showNotification('Message sent successfully! We\'ll get back to you soon.');
+                contactForm.reset();
+            }, 1000);
+        });
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFeaturedItems();
+            updateCart();
+            updateUserUI();
+        });
+    </script>
+</body>
+</html>
